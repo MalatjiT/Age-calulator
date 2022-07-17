@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1">
+<title>How old are you this year</title>
+<style>
+* {
+box-sizing:border-box;
+}
+
+h1 {
+font-family:arial;
+}
+body {
+background: lightblue;
+display:flex;
+flex-direction: column;
+align-items: center;
+}
+button {
+background:red;
+outline:none;
+border:none;
+border-radius: 20px;
+color: #ffffff;
+}
+#age {
+height;100px;
+width:100px;
+margin: 20px;
+font-family:serif;
+}
+</style>
+</head>
+<body>
+<h1>Age calculator</h1>
+<div class="months">
+<button onclick="getAge();">ENTER</button><span>&nbsp the year of your birth</span>
+</div>
+<div id="age"></div>
+<script>
+function getAge() {
+var birthYear = prompt("Write the year of your birth");
+var date = new Date();
+var thisYear = date.getFullYear();
+var age = thisYear - birthYear;
+
+if (birthYear == "") {
+alert("enter the year");
+return false;
+} else {
+document.querySelector("#age").innerHTML = "You are " + age + "  years old this year";
+}
+}
+</script>
+</body>
+</html> 
